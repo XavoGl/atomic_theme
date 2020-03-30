@@ -13,6 +13,7 @@ down:
 install:
 	echo "Install Drupal 8 & dependencies"
 	docker-compose exec -T php bash -c "composer install"
+	sleep 30
 	docker-compose exec -T php bash -c "drush si --config-dir=../config/default --db-url=mysql://${PROFILE_NAME}:${PROFILE_NAME}@mariadb/${PROFILE_NAME} --verbose"
 	docker-compose exec -T php bash -c "drush user:password admin ${ADMIN_PASS}"
 	
