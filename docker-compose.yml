@@ -37,7 +37,7 @@ services:
     labels:
       - 'traefik.backend=nginx_${PROFILE_NAME}'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:${TRAEFIK_HOST}'
+      - 'traefik.frontend.rule=Host:${URL_HOST}'
  
 #  solr:
 #    image: solr:6-alpine
